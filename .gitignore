@@ -361,3 +361,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/MadaysBookShop/Models/MockBookRepository.cs
+/MadaysBookShop/Models/MockCategoryRepository.cs
