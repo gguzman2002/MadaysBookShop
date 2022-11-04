@@ -1,4 +1,5 @@
 ﻿using MadaysBookShop.Models;
+using MadaysBookShop.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MadaysBookShop.Controllers
@@ -17,7 +18,9 @@ namespace MadaysBookShop.Controllers
 
         public IActionResult List()
         {
-            return View(_bookRepository.AllBooks);
+            BookListViewModel bookListViewModel = new BookListViewModel
+                (_bookRepository.AllBooks, "Romance");
+            return View(bookListViewModel);
         }
     }
 }

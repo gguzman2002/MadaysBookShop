@@ -1,0 +1,21 @@
+﻿@model MadaysBookShop.ViewModels.BookListViewModel
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Maday's Book Shop</title>
+    </head>
+    <body>
+        <h1>@Model.CurrentCategory</h1>
+        @foreach(var book in Model.Books)
+        {
+            <div>
+                <h2>@book.Name</h2>
+                <h3>@book.Price.ToString("c")</h3>
+                <h4>@book.Category.CategoryName</h4>
+            </div>
+        }
+    </body>
+</html>
