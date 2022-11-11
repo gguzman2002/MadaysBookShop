@@ -5,10 +5,30 @@
     <meta name="viewport" content="width=device-width" />
     <title>Maday's Book Shop</title>
     <link href="~/css/site.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Lato&display=swap" rel="stylesheet">
     <base href="/" />
 </head>
 <body>
-    <div>
+    <aside class="sr-only">
+        <p><a href="#layout-nav">Jump to navigation</a></p>
+        <p><a href="#layout-renderbody">Jump to page content</a></p>
+        <p>Hello, please let us know if you encounter any issues with the site so we can improve our accessibility. Thanks for visiting!</p>
+        <p><a href="mailto:mdygbrl@gmail.com">Use this link to send us a direct email, thanks.</a></p>
+    </aside>
+
+    <header class="layout-header">
+
+        <div class="layout-divmadaysbookshop">
+            <h1 class="layout-madaysbookshop">Maday's Book Shop</h1>
+        </div>
+
+        <nav id="layout-nav" class="layout-nav"></nav>
+
+    </header>
+
+    <div id="layout-renderbody" class="layout-renderbody">
         @RenderBody()
     </div>
 </body>

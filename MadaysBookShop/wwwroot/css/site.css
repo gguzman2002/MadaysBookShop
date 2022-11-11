@@ -1,2 +1,146 @@
-﻿body {
+﻿/*
+
+    Unless otherwise specified:
+    
+    Styles organized by Views and only apply within the view. Deviations from this practice will be explicitly noted.
+
+    Selectors typically will follow a view first convention, for example ".layout-[...]" means this belongs to the _Layout view.
+
+    Tip: Ctrl-F to search for view, for example "_Layout".
+
+*/
+
+/*
+    Global Styles
+
+    CSS resets, starter font, .sr-only for screen readers
+
+    http://meyerweb.com/eric/tools/css/reset/
+    v2.0 | 20110126
+    License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    font-size: 1.1rem;
+    font-family: 'Lato', sans-serif;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+        content: '';
+        content: none;
+    }
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.sr-only {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    top: auto;
+    overflow: hidden;
+}
+
+:root {
+    background-color: #FFDBD4;
+}
+
+/*
+    _Layout
+*/
+
+.layout-header {
+    display: flex;
+    height: 150px;
+    margin-bottom: 25px;
+}
+
+.layout-divmadaysbookshop {
+    display: flex;
+    margin: auto;
+    padding: 25px;
+    background-color: #985273;
+    border: 2px solid cornsilk;
+    box-shadow: 5px 5px #603449;
+}
+
+.layout-madaysbookshop {
+    margin: auto;
+    font-size: 3rem;
+    font-family: 'Comfortaa', cursive;
+    color: #FFE9E5;
+}
+
+.layout-nav {
+}
+
+.layout-renderbody {
+}
+
+/*
+    List
+*/
+
+.list-booksection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0px 15px;
+}
+
+.list-bookarticle {
+    padding: 25px;
+    background-color: #FFFBED;
+    outline: .5px solid black;
+}
+
+.list-bookimage {
+    height: 300px;
+    width: auto;
+}
+
+.list-bookname {
+}
+
+.list-bookprice {
+}
+
+.list-bookcategory {
 }

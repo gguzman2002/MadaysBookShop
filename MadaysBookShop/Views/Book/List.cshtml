@@ -4,12 +4,18 @@
     Layout = "_Layout";
 }
 
-<h1>@Model.CurrentCategory</h1>
-@foreach (var book in Model.Books)
-{
-    <div>
-        <h2>@book.Name</h2>
-        <h3>@book.Price.ToString("c")</h3>
-        <h4>@book.Category.CategoryName</h4>
-    </div>
-}
+@*<h2>@Model.CurrentCategory</h2>*@
+
+<section class="list-booksection">
+
+    @foreach (var book in Model.Books)
+    {
+        <article class="list-bookarticle">
+            <img class="list-bookimage" src=@book.ImageUrl>
+            <h2 class="list-bookname">@book.Name</h2>
+            <h2 class="list-bookprice">@book.Price.ToString("c")</h2>
+            <h2 class="list-bookcategory">@book.Category.CategoryName</h2>
+        </article>
+    }
+
+</section>
