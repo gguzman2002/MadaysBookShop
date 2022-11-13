@@ -17,7 +17,7 @@ namespace MadaysBookShop.Models
             {
                 return _madaysBookShopDbContext.Books.Include(b => b.Category);
             }
-        };
+        }
 
         public IEnumerable<Book> BooksOfTheWeek
         {
