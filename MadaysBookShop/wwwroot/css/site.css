@@ -121,26 +121,44 @@ table {
 .list-booksection {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    padding: 0px 15px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 25px 25px;
+    padding: 0px 25px 50px 25px;
 }
 
 .list-bookarticle {
+    display: grid;
     padding: 25px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "thumb thumb"
+        "name name"
+        "category price";
+    justify-items: center;
     background-color: #FFFBED;
     outline: .5px solid black;
 }
 
 .list-bookimage {
-    height: 300px;
-    width: auto;
+    height: auto;
+    width: 300px;
+    grid-area: thumb;
 }
 
 .list-bookname {
-}
-
-.list-bookprice {
+    max-width: 300px;
+    padding: 25px 0px;
+    grid-area: name;
 }
 
 .list-bookcategory {
+    grid-area: category;
+    justify-self: left;
+}
+
+.list-bookprice {
+    grid-area: price;
+    justify-self: right;
 }
