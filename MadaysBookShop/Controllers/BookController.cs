@@ -22,5 +22,13 @@ namespace MadaysBookShop.Controllers
                 (_bookRepository.AllBooks, "Romance");
             return View(bookListViewModel);
         }
+
+        public IActionResult Details(int id)
+        {
+            var book = _bookRepository.GetBookById(id);
+            if (book == null)
+                return NotFound();
+            return View(book);
+        }
     }
 }
