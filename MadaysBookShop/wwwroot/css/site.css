@@ -162,3 +162,57 @@ table {
     grid-area: price;
     justify-self: right;
 }
+
+/*
+    Details
+*/
+
+.details-booksection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 0px 150px 50px 150px;
+}
+
+.details-bookarticle {
+    width: fit-content;
+    display: grid;
+    padding: 50px;
+    grid-template-columns: auto auto 250px 250px;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "img img name name"
+        "img img shortdesc shortdesc"
+        "img img longdesc longdesc"
+        ". . category price";
+    justify-items: center;
+    align-items: center;
+    background-color: #FFFBED;
+    outline: .5px solid black;
+}
+
+.details-bookimage {
+    height: auto;
+    width: 400px;
+    grid-area: img;
+}
+
+.details-bookname {
+    grid-area: name;
+}
+
+.details-bookshortdesc {
+    grid-area: shortdesc;
+}
+
+.details-booklongdesc {
+    grid-area: longdesc;
+}
+
+.details-bookcategory {
+    grid-area: category;
+}
+
+.details-bookprice {
+    grid-area: price;
+}

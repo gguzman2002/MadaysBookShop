@@ -1,0 +1,18 @@
+﻿@model Book
+
+@{
+    Layout = "_Layout";
+}
+
+<section class="details-booksection">
+
+    <article class="details-bookarticle">
+        <img class="details-bookimage" src=@Model.ImageUrl>
+        <h2 class="details-bookname">@Model.Name</h2>
+        <p class="details-bookshortdesc">@Model.ShortDescription</p>
+        <p class="details-booklongdesc">@Model.LongDescription</p>
+        <h2 class="details-bookcategory">@Model.Category.CategoryName</h2>
+        <h2 class="details-bookprice">@Model.Price.ToString("c")</h2>
+    </article>
+
+</section>

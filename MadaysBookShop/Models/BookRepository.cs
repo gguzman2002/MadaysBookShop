@@ -29,7 +29,7 @@ namespace MadaysBookShop.Models
 
         public Book? GetBookById(int bookId)
         {
-            return _madaysBookShopDbContext.Books.FirstOrDefault(b => b.BookId == bookId);
+            return _madaysBookShopDbContext.Books.Include(b => b.Category).FirstOrDefault(b => b.BookId == bookId);
         }
     }
 }
