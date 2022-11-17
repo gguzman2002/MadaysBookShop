@@ -175,16 +175,16 @@ table {
 }
 
 .details-bookarticle {
-    width: fit-content;
     display: grid;
     padding: 50px;
     grid-template-columns: auto auto 250px 250px;
+    column-gap: 50px;
     grid-template-rows: auto;
     grid-template-areas:
         "img img name name"
         "img img shortdesc shortdesc"
         "img img longdesc longdesc"
-        ". . category price";
+        "img img category price";
     justify-items: center;
     align-items: center;
     background-color: #FFFBED;
@@ -211,8 +211,10 @@ table {
 
 .details-bookcategory {
     grid-area: category;
+    align-self: end;
 }
 
 .details-bookprice {
     grid-area: price;
+    align-self: end;
 }
