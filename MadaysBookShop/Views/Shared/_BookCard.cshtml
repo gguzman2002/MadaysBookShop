@@ -1,0 +1,10 @@
+﻿@model Book
+
+<a asp-controller="Book" asp-action="Details" asp-route-id="@Model.BookId">
+    <article class="bookcard-bookarticle">
+        <img class="bookcard-bookimage" src=@Model.ImageThumbnailUrl>
+        <h2 class="bookcard-bookname">@Model.Name</h2>
+        <h2 class="bookcard-bookcategory">@Model.Category.CategoryName</h2>
+        <h2 class="bookcard-bookprice">@Model.Price.ToString("c")</h2>
+    </article>
+</a>

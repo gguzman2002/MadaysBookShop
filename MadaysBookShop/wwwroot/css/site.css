@@ -120,10 +120,10 @@ a {
 }
 
 /*
-    List
+    Index
 */
 
-.list-booksection {
+.index-booksection {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -132,7 +132,11 @@ a {
     padding: 0px 25px 50px 25px;
 }
 
-.list-bookarticle {
+/*
+    _BookCard
+*/
+
+.bookcard-bookarticle {
     display: grid;
     height: 400px;
     padding: 25px;
@@ -147,24 +151,24 @@ a {
     outline: .5px solid black;
 }
 
-.list-bookimage {
+.bookcard-bookimage {
     height: auto;
     width: 300px;
     grid-area: thumb;
 }
 
-.list-bookname {
+.bookcard-bookname {
     max-width: 300px;
     padding: 25px 0px;
     grid-area: name;
 }
 
-.list-bookcategory {
+.bookcard-bookcategory {
     grid-area: category;
     justify-self: left;
 }
 
-.list-bookprice {
+.bookcard-bookprice {
     grid-area: price;
     justify-self: right;
 }
