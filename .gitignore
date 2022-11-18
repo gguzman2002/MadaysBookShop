@@ -363,3 +363,4 @@ MigrationBackup/
 FodyWeavers.xsd
 /MadaysBookShop/Models/MockBookRepository.cs
 /MadaysBookShop/Models/MockCategoryRepository.cs
+/MadaysBookShop/Views/Shared/_BookCard.cshtml
