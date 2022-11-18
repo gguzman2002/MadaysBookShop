@@ -2,12 +2,12 @@
 
 namespace MadaysBookShop.ViewModels
 {
-    public class BookListViewModel
+    public class HomeViewModel
     {
         public IEnumerable<Book> Books { get; }
         public string? CurrentCategory { get; }
 
-        public BookListViewModel(IEnumerable<Book> books, string? currentCategory)
+        public HomeViewModel(IEnumerable<Book> books, string? currentCategory)
         {
             Books = books;
             CurrentCategory = currentCategory;

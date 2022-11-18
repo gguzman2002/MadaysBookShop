@@ -19,7 +19,7 @@ namespace MadaysBookShop.Controllers
         public IActionResult List()
         {
             BookListViewModel bookListViewModel = new BookListViewModel
-                (_bookRepository.AllBooks, "Romance");
+                (_bookRepository.AllBooks, "All books");
             return View(bookListViewModel);
         }
 

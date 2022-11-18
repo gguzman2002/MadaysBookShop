@@ -82,6 +82,11 @@ table {
     background-color: #FFDBD4;
 }
 
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
 /*
     _Layout
 */
@@ -129,6 +134,7 @@ table {
 
 .list-bookarticle {
     display: grid;
+    height: 400px;
     padding: 25px;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
