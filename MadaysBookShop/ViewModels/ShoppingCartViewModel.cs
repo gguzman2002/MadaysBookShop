@@ -7,7 +7,7 @@ namespace MadaysBookShop.ViewModels
         public ShoppingCartViewModel(IShoppingCart shoppingCart, decimal shoppingCartTotal)
         {
             ShoppingCart = shoppingCart;
-            shoppingCartTotal = shoppingCartTotal;
+            ShoppingCartTotal = shoppingCartTotal;
         }
 
         public IShoppingCart ShoppingCart { get; }

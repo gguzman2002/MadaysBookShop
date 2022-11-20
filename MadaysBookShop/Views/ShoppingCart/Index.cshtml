@@ -1,0 +1,31 @@
+﻿@model ShoppingCartViewModel
+
+@{
+    Layout = "_Layout";
+}
+
+
+<section class="shoppingcart-section">
+
+    <h2 class="shoppingcart-heading">Shopping Cart</h2>
+
+    @if (Model.ShoppingCart.ShoppingCartItems.Count() == 0)
+    {
+        <h3 class="shoppingcart-empty">Nothing here yet, come on, get reading!</h3>
+    }
+    else
+    {
+        @foreach (var item in Model.ShoppingCart.ShoppingCartItems)
+        {
+            <article class="shoppingcart-bookarticle">
+                <img class="shoppingcart-bookimage" src=@item.Book.ImageUrl>
+                <h2 class="shoppingcart-bookname">@item.Book.Name</h2>
+                <h2 class="shoppingcart-bookamount">Qty. @item.Amount</h2>
+                <h2 class="shoppingcart-bookprice">@item.Book.Price.ToString("c")</h2>
+            </article>
+        }
+    }
+
+    <h3 class="shoppingcart-total">Total: @Model.ShoppingCartTotal.ToString("c")</h3>
+
+</section>

@@ -117,10 +117,13 @@ a {
 }
 
 .layout-renderbody {
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
 
 /*
-    Index
+    Home, Index
 */
 
 .index-booksection {
@@ -181,20 +184,20 @@ a {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    padding: 0px 150px 50px 150px;
+    padding: 50px;
 }
 
 .details-bookarticle {
     display: grid;
     padding: 50px;
-    grid-template-columns: auto auto 250px 250px;
+    grid-template-columns: auto auto 200px 200px;
     column-gap: 50px;
     grid-template-rows: auto;
     grid-template-areas:
         "img img name name"
         "img img shortdesc shortdesc"
         "img img longdesc longdesc"
-        "img img category price";
+        "img img price addtocart";
     justify-items: center;
     align-items: center;
     background-color: #FFFBED;
@@ -219,12 +222,85 @@ a {
     grid-area: longdesc;
 }
 
-.details-bookcategory {
-    grid-area: category;
-    align-self: end;
-}
-
 .details-bookprice {
     grid-area: price;
     align-self: end;
+    padding: 5px;
+}
+
+.details-bookaddtocart {
+    grid-area: addtocart;
+    align-self: end;
+    padding: 5px;
+    outline: 1px solid black;
+}
+
+/*
+    Shopping Cart, Index
+*/
+
+.shoppingcart-section {
+    min-height: 400px;
+    padding: 50px;
+    min-width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-items: start;
+    background-color: #FFFBED;
+    outline: .5px solid black;
+}
+
+.shoppingcart-heading {
+    align-self: center;
+    font-size: 1.3rem;
+    margin-bottom: auto;
+    text-decoration: #985273 dotted underline;
+}
+
+.shoppingcart-empty {
+    font-style: italic;
+    align-self: center;
+}
+
+.shoppingcart-total {
+    align-self: end;
+    font-size: 1.3rem;
+    margin-top: auto;
+    margin-right: 100px;
+    text-decoration: #985273 dotted underline;
+}
+
+.shoppingcart-bookarticle {
+    margin: 25px 0px;
+    display: grid;
+    grid-template-columns: auto auto 200px 200px;
+    column-gap: 50px;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "img img name name"
+        "img img amount price";
+    justify-items: center;
+    align-items: center;
+}
+
+.shoppingcart-bookimage {
+    height: auto;
+    width: 150px;
+    grid-area: img;
+}
+
+.shoppingcart-bookname {
+    grid-area: name;
+}
+
+.shoppingcart-bookamount {
+    grid-area: amount;
+    justify-self: start;
+}
+
+.shoppingcart-bookprice {
+    grid-area: price;
+    justify-self: start;
 }
