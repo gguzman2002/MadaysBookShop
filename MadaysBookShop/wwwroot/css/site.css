@@ -126,13 +126,13 @@ a {
 
 .layout-navhome {
     grid-area: home;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: bold;
 }
 
 .layout-navcart {
     grid-area: cart;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: bold;
 }
 
