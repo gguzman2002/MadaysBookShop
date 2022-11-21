@@ -92,14 +92,25 @@ a {
 */
 
 .layout-header {
-    display: flex;
     height: 150px;
     margin-bottom: 25px;
+    padding: 25px 0px;
+}
+
+.layout-nav {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "home title cart";
+    justify-items: center;
+    align-items: center;
 }
 
 .layout-divmadaysbookshop {
+    grid-area: title;
+    width: fit-content;
     display: flex;
-    margin: auto;
     padding: 25px;
     background-color: #985273;
     border: 2px solid cornsilk;
@@ -113,7 +124,16 @@ a {
     color: #FFE9E5;
 }
 
-.layout-nav {
+.layout-navhome {
+    grid-area: home;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.layout-navcart {
+    grid-area: cart;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 .layout-renderbody {

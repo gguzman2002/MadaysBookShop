@@ -20,10 +20,15 @@
 
     <header class="layout-header">
 
-        <div class="layout-divmadaysbookshop">
-            <h1 class="layout-madaysbookshop">Maday's Book Shop</h1>
-        </div>
+        <nav class="layout-nav">
 
+            <div class="layout-divmadaysbookshop">
+                <h1 class="layout-madaysbookshop">Maday's Book Shop</h1>
+            </div>
+
+            <a class="layout-navhome" asp-controller="Home" asp-action="Index">Home</a>
+            <a class="layout-navcart" asp-controller="ShoppingCart" asp-action="Index">Cart</a>
+        </nav>
 
     </header>
 
