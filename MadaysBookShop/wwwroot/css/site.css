@@ -161,6 +161,7 @@ a {
     display: block;
     margin: 5px 5px 5px 0px;
 }
+
 .layout-categories:focus-within .layout-category {
     visibility: visible;
     opacity: 1;
