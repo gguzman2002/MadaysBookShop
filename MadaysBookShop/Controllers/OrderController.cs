@@ -18,5 +18,32 @@ namespace MadaysBookShop.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public IActionResult Checkout(Order order)
+        {
+            var items = _shoppingCart.GetShoppingCartItems();
+            _shoppingCart.ShoppingCartItems = items;
+
+            if (_shoppingCart.ShoppingCartItems.Count == 0)
+            {
+                ModelState.AddModelError("", "Your car is empty, add some books!");
+            }
+
+            if (ModelState.IsValid)
+            {
+                _orderRepository.CreateOrder(order);
+                _shoppingCart.ClearCart();
+                return RedirectToAction("CheckoutComplete");
+            }
+            return View(order);
+        }
+
+        public IActionResult CheckoutComplete()
+        {
+            ViewBag.CheckoutCompleteMessage = "Order complete, thank you!";
+
+            return View();
+        }
     }
 }
