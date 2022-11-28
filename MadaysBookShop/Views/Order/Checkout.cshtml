@@ -3,6 +3,8 @@
 <form asp-action="Checkout" method="post" role="form">
     <h3>Get ready for some reading!</h3>
 
+    <div asp-validation-summary="All"></div>
+
     <label asp-for="FirstName"></label>
     <input asp-for="FirstName" />
 
