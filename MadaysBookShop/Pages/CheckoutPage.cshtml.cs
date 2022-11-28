@@ -1,27 +1,33 @@
-﻿using Microsoft.AspNetCore.Mvc;
 using MadaysBookShop.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace MadaysBookShop.Controllers
+namespace MadaysBookShop.Pages
 {
-    public class OrderController : Controller
+    public class CheckoutPageModel : PageModel
     {
         private readonly IOrderRepository _orderRepository;
         private readonly IShoppingCart _shoppingCart;
 
-        public OrderController(IOrderRepository orderRepository, IShoppingCart shoppingCart)
+        public CheckoutPageModel(IOrderRepository orderRepository, IShoppingCart shoppingCart)
         {
             _orderRepository = orderRepository;
             _shoppingCart = shoppingCart;
         }
 
-        public IActionResult Checkout()
+        [BindProperty]
+        public Order Order { get; set; } 
+        public void OnGet()
         {
-            return View();
         }
 
-        [HttpPost]
-        public IActionResult Checkout(Order order)
+        public IActionResult OnPost()
         {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
             var items = _shoppingCart.GetShoppingCartItems();
             _shoppingCart.ShoppingCartItems = items;
 
@@ -32,18 +38,12 @@ namespace MadaysBookShop.Controllers
 
             if (ModelState.IsValid)
             {
-                _orderRepository.CreateOrder(order);
+                _orderRepository.CreateOrder(Order);
                 _shoppingCart.ClearCart();
-                return RedirectToAction("CheckoutComplete");
+                return RedirectToPage("CheckoutCompletePage");
             }
-            return View(order);
-        }
+            return Page();
 
-        public IActionResult CheckoutComplete()
-        {
-            ViewBag.CheckoutCompleteMessage = "Order complete, thank you!";
-
-            return View();
         }
     }
 }

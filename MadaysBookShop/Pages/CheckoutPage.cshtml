@@ -1,0 +1,40 @@
+﻿@page
+@model MadaysBookShop.Pages.CheckoutPageModel
+
+<form method="post" role="form">
+    <h3>Get ready for some reading!</h3>
+
+    <div asp-validation-summary="All"></div>
+
+    <label asp-for="Order.FirstName"></label>
+    <input asp-for="Order.FirstName" />
+
+    <label asp-for="Order.LastName"></label>
+    <input asp-for="Order.LastName" />
+
+    <label asp-for="Order.AddressLine1"></label>
+    <input asp-for="Order.AddressLine1" />
+
+    <label asp-for="Order.AddressLine2"></label>
+    <input asp-for="Order.AddressLine2" />
+
+    <label asp-for="Order.City"></label>
+    <input asp-for="Order.City" />
+
+    <label asp-for="Order.State"></label>
+    <input asp-for="Order.State" />
+
+    <label asp-for="Order.ZipCode"></label>
+    <input asp-for="Order.ZipCode" />
+
+    <label asp-for="Order.Country"></label>
+    <input asp-for="Order.Country" />
+
+    <label asp-for="Order.Email"></label>
+    <input asp-for="Order.Email" />
+
+    <label asp-for="Order.PhoneNumber"></label>
+    <input asp-for="Order.PhoneNumber" />
+
+    <input type="submit" value="Complete order" />
+</form>
