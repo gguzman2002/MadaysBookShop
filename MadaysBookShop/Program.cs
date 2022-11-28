@@ -12,6 +12,7 @@ builder.Services.AddSession();
 builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages();
 
 builder.Services.AddDbContext<MadaysBookShopDbContext>(options =>
 {
@@ -30,6 +31,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.MapDefaultControllerRoute();
+app.MapRazorPages();
 
 DbSeeder.Seed(app);
 
