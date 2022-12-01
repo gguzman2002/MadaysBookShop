@@ -30,7 +30,8 @@ namespace MadaysBookShop.Controllers
 
             if (string.IsNullOrEmpty(category))
             {
-                books = _bookRepository.AllBooks.Where(b => b.Category.CategoryName == category)
+                books = _bookRepository.AllBooks
+                    //.Where(b => b.Category.CategoryName == category)
                     .OrderBy(b => b.BookId);
                 currentCategory = "All books";
             }
