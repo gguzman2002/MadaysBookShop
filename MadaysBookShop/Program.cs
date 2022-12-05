@@ -1,8 +1,10 @@
 using MadaysBookShop.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("MadaysBookShopDbContextConnection") ?? throw new InvalidOperationException("Connection string 'MadaysBookShopDbContextConnection' not found.");
 
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IBookRepository, BookRepository>();
@@ -25,6 +27,9 @@ builder.Services.AddDbContext<MadaysBookShopDbContext>(options =>
     options.UseSqlServer(
         builder.Configuration["ConnectionStrings:MadaysBookShopDbContextConnection"]);
 });
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<MadaysBookShopDbContext>();
 
 builder.Services.AddServerSideBlazor();
 
