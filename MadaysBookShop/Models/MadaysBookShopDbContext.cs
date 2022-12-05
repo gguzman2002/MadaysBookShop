@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace MadaysBookShop.Models
 {
-    public class MadaysBookShopDbContext: DbContext
+    public class MadaysBookShopDbContext: IdentityDbContext
     {
         public MadaysBookShopDbContext(DbContextOptions<MadaysBookShopDbContext>
             options) : base(options)
