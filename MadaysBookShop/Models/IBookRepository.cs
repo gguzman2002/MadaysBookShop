@@ -5,5 +5,6 @@
         IEnumerable<Book> AllBooks { get; }
         IEnumerable<Book> BooksOfTheWeek { get; }
         Book? GetBookById(int bookId);
+        IEnumerable<Book> SearchBooks(string searchQuery);
     }
 }

@@ -1,5 +1,6 @@
 using MadaysBookShop.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +12,12 @@ builder.Services.AddScoped<IShoppingCart, ShoppingCart>(sp => ShoppingCart.GetCa
 builder.Services.AddSession();
 builder.Services.AddHttpContextAccessor();
 
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+    });
+
 builder.Services.AddRazorPages();
 
 builder.Services.AddDbContext<MadaysBookShopDbContext>(options =>
@@ -19,6 +25,8 @@ builder.Services.AddDbContext<MadaysBookShopDbContext>(options =>
     options.UseSqlServer(
         builder.Configuration["ConnectionStrings:MadaysBookShopDbContextConnection"]);
 });
+
+builder.Services.AddServerSideBlazor();
 
 var app = builder.Build();
 
@@ -32,6 +40,9 @@ if (app.Environment.IsDevelopment())
 
 app.MapDefaultControllerRoute();
 app.MapRazorPages();
+
+app.MapBlazorHub();
+app.MapFallbackToPage("/app/{*catchall}", "/App/Index");
 
 DbSeeder.Seed(app);
 

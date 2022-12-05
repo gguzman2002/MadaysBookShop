@@ -31,5 +31,10 @@ namespace MadaysBookShop.Models
         {
             return _madaysBookShopDbContext.Books.Include(b => b.Category).FirstOrDefault(b => b.BookId == bookId);
         }
+
+        public IEnumerable<Book> SearchBooks(string searchQuery)
+        {
+            return _madaysBookShopDbContext.Books.Where(b => b.Name.Contains(searchQuery));
+        }
     }
 }
