@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MadaysBookShop.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MadaysBookShop.Controllers
 {
+    [Authorize]
     public class OrderController : Controller
     {
         private readonly IOrderRepository _orderRepository;

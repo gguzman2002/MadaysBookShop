@@ -28,7 +28,9 @@ builder.Services.AddDbContext<MadaysBookShopDbContext>(options =>
         builder.Configuration["ConnectionStrings:MadaysBookShopDbContextConnection"]);
 });
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddDefaultIdentity<IdentityUser>(
+    options => options.SignIn.RequireConfirmedAccount = true
+    )
     .AddEntityFrameworkStores<MadaysBookShopDbContext>();
 
 builder.Services.AddServerSideBlazor();
@@ -38,6 +40,7 @@ var app = builder.Build();
 app.UseStaticFiles();
 app.UseSession();
 app.UseAuthentication();
+app.UseAuthorization();
 
 if (app.Environment.IsDevelopment())
 {

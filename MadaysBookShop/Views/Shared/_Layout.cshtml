@@ -30,12 +30,14 @@
             <vc:category-menu></vc:category-menu>
             <a asp-controller="Contact" asp-action="Index" class="layout-contact">Contact</a>
             <vc:shopping-cart-summary></vc:shopping-cart-summary>
+            <partial name="_LoginPartial" />
         </nav>
 
     </header>
 
     <main id="layout-renderbody" class="layout-renderbody">
         @RenderBody()
+        @RenderSection("Scripts", required: false)
     </main>
 </body>
 </html>
