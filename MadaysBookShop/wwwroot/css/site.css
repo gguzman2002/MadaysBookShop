@@ -38,7 +38,7 @@ time, mark, audio, video {
     border: 0;
     vertical-align: baseline;
     font-size: 1.1rem;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Lora', serif;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
@@ -105,13 +105,14 @@ a {
         "home catmenu title contact cart";
     justify-items: center;
     align-items: center;
+    color: #603449;
 }
 
 .layout-divmadaysbookshop {
     grid-area: title;
     width: fit-content;
     display: flex;
-    padding: 25px;
+    padding: 15px;
     background-color: #985273;
     border: 2px solid cornsilk;
     box-shadow: 5px 5px #603449;
@@ -120,7 +121,7 @@ a {
 .layout-madaysbookshop {
     margin: auto;
     font-size: 3rem;
-    font-family: 'Comfortaa', cursive;
+    font-family: 'David Libre', serif;
     color: #FFE9E5;
 }
 
