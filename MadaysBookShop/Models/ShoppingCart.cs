@@ -27,6 +27,7 @@ namespace MadaysBookShop.Models
 
             return new ShoppingCart(context) { ShoppingCartId = cartId };
         }
+
         public void AddToCart(Book book)
         {
             var shoppingCartItem = _madaysBookShopDbContext.ShoppingCartItems.SingleOrDefault(
