@@ -22,15 +22,14 @@
     <header class="layout-header">
 
         <nav class="layout-nav">
-
             <div class="layout-divmadaysbookshop">
                 <h1 class="layout-madaysbookshop">Maday's Book Shop</h1>
             </div>
 
             <a class="layout-navhome" asp-controller="Home" asp-action="Index">Home</a>
             <vc:category-menu></vc:category-menu>
-            <vc:shopping-cart-summary></vc:shopping-cart-summary>
             <partial name="_LoginPartial" />
+            <vc:shopping-cart-summary></vc:shopping-cart-summary>
         </nav>
 
     </header>
