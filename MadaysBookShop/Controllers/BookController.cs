@@ -16,13 +16,6 @@ namespace MadaysBookShop.Controllers
             _categoryRepository = categoryRepository;
         }
 
-        //public IActionResult List()
-        //{
-        //    BookListViewModel bookListViewModel = new BookListViewModel
-        //        (_bookRepository.AllBooks, "All books");
-        //    return View(bookListViewModel);
-        //}
-
         public ViewResult List(string category)
         {
             IEnumerable<Book> books;
@@ -31,7 +24,6 @@ namespace MadaysBookShop.Controllers
             if (string.IsNullOrEmpty(category))
             {
                 books = _bookRepository.AllBooks
-                    //.Where(b => b.Category.CategoryName == category)
                     .OrderBy(b => b.BookId);
                 currentCategory = "All books";
             }
