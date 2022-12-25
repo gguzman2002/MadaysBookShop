@@ -1,19 +1,5 @@
 ﻿/*
-
-    Unless otherwise specified:
-    
-    Styles organized by Views and only apply within the view. Deviations from this practice will be explicitly noted.
-
-    Selectors typically will follow a view first convention, for example ".layout-[...]" means this belongs to the _Layout view.
-
-    Tip: Ctrl-F to search for view, for example "_Layout".
-
-*/
-
-/*
-    Global Styles
-
-    CSS resets, starter font, .sr-only for screen readers
+    CSS resets, .sr-only
 
     http://meyerweb.com/eric/tools/css/reset/
     v2.0 | 20110126
@@ -37,9 +23,8 @@ time, mark, audio, video {
     padding: 0;
     border: 0;
     vertical-align: baseline;
-    font-size: 1.1rem;
-    font-family: 'Lora', serif;
 }
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
@@ -58,11 +43,11 @@ blockquote, q {
     quotes: none;
 }
 
-    blockquote:before, blockquote:after,
-    q:before, q:after {
-        content: '';
-        content: none;
-    }
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
 
 table {
     border-collapse: collapse;
@@ -85,6 +70,15 @@ table {
 a {
     color: inherit;
     text-decoration: inherit;
+}
+
+/*
+    Typography
+*/
+
+* {
+    font-size: 1.1rem;
+    font-family: 'Lora', serif;
 }
 
 /*
