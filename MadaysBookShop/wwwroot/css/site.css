@@ -93,10 +93,10 @@ a {
 
 .layout-nav {
     display: grid;
-    grid-template-columns: auto;
+    grid-template-columns: 1fr 1fr auto 1fr 1fr;
     grid-template-rows: auto;
     grid-template-areas:
-        "home catmenu title login cart";
+        "home catmenu title cart cart";
     justify-items: center;
     align-items: center;
     color: #603449;
