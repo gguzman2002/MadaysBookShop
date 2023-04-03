@@ -22,19 +22,22 @@
     <header class="layout-header">
 
         <nav class="layout-nav">
-            <div class="layout-divmadaysbookshop">
-                <h1 class="layout-madaysbookshop">Maday's Book Shop</h1>
+            <div class="madaysbookshopbox">
+                <h1 class="madaysbookshoph1">Maday's Book Shop</h1>
             </div>
 
-            <a class="layout-navhome" asp-controller="Home" asp-action="Index">Home</a>
-            <vc:category-menu></vc:category-menu>
+            <div class="homecatbox">
+                <a class="navhome navitem" asp-controller="Home" asp-action="Index">Home</a>
+                <vc:category-menu></vc:category-menu>
+            </div>
             @*<partial name="_LoginPartial" />*@
             <vc:shopping-cart-summary></vc:shopping-cart-summary>
+
         </nav>
 
     </header>
 
-    <main id="layout-renderbody" class="layout-renderbody">
+    <main class="layout-renderbody">
         @RenderBody()
         @RenderSection("Scripts", required: false)
     </main>

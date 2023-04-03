@@ -12,7 +12,7 @@
         <p class="details-bookshortdesc">@Model.ShortDescription</p>
         <p class="details-booklongdesc">@Model.LongDescription</p>
         <h2 class="details-bookprice">@Model.Price.ToString("c")</h2>
-        <h2 class="details-bookaddtocart">
+        <h2 class="details-bookaddtocart button">
             <a asp-controller="ShoppingCart" asp-action="AddToShoppingCart" asp-route-bookId="@Model.BookId">
                 Add to Cart
             </a>
